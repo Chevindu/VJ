@@ -1,0 +1,117 @@
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	<!-- Latest Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.5.0/css/bootstrap4-toggle.min.css"
+		rel="stylesheet">
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.6.2/css/bootstrap-slider.min.css"
+		integrity="sha256-G3IAYJYIQvZgPksNQDbjvxd/Ca1SfCDFwu2s2lt0oGo=" crossorigin="anonymous" />
+	<style>
+		body {
+			overflow: hidden;
+			padding: 0;
+			margin: 0;
+		}
+
+		#info {
+			position: absolute;
+			top: 0px;
+			width: 100%;
+			padding: 5px;
+			text-align: center;
+		}
+
+		#info a {
+			color: #66F;
+			text-decoration: none;
+		}
+
+		#info a:hover {
+			text-decoration: underline;
+		}
+
+		#container {
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+			padding: 0;
+			margin: 0;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			background-color: bisque;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="col-lg-6 col-s-12" style="float: left; height: 50%;">
+		<div class="" id="container"></div>
+	</div>
+	<div class="col-lg-6 col-s-12 p-2" style="float: right;">
+		<div class="card pt-2">
+			<div class="card-body">
+				<h4 class="card-title">Display</h4>
+				<!-- <h5 class="card-subtitle mb-2 text-muted">Console log</h5> -->
+				<div class="border border-secondary"
+					style="overflow:scroll; height: 200px; border-radius: 4px; padding: 1em; margin: 1em 0 1em 0;">
+					<div id="display"></div>
+				</div>
+				<a href="robot.html" target="_blank" class="btn btn-primary">Open the Robot in new tab</a>
+				<button class="btn btn-default" onclick="clearlog()">Clear Logs</button>
+			</div>
+		</div>
+	</div>
+	<div class="clearfix"></div>
+	<div class="container pt-4">
+		<!-- <h1>Telepresence Controlling interface</h1> -->
+		<button type="button" class="btn btn-secondary" onclick="toggleWS()">Toggle Websocket</button>
+		<input id="chkToggle" type="checkbox" data-offstyle="secondary" data-onstyle="success">
+
+		<span id="result"></span>
+		<br />
+		<br />
+		<input type="text" name="somename" data-provide="slider" data-slider-ticks="[1, 2, 3]"
+			data-slider-ticks-labels='["slow", "normal", "fast"]' data-slider-min="1" data-slider-max="3"
+			data-slider-step="1" data-slider-value="3" data-slider-tooltip="hide">
+		<!-- <div class="card mt-2">
+			<div class="card-body">
+				<h4 class="card-title">Display</h4> -->
+		<!-- <h5 class="card-subtitle mb-2 text-muted">Console log</h5> -->
+		<!-- <div class="border border-secondary"
+					style="overflow:scroll; height: 100px; border-radius: 4px; padding: 1em; margin: 1em 0 1em 0;">
+					<div id="display"></div>
+				</div>
+				<a href="robot.html" target="_blank" class="btn btn-primary">Open the Robot in new tab</a>
+				<button class="btn btn-default" onclick="clearlog()">Clear Logs</button>
+			</div>
+		</div> -->
+	</div>
+
+
+
+	<!-- jQuery, Popper and Bootstrap -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+		crossorigin="anonymous"></script>
+	<!-- BootstrapToggle -->
+	<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.5.0/js/bootstrap4-toggle.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.6.2/bootstrap-slider.min.js"
+		integrity="sha256-oj52qvIP5c7N6lZZoh9z3OYacAIOjsROAcZBHUaJMyw=" crossorigin="anonymous"></script>
+	<script src="./socket.io/socket.io.js"></script>
+	<script src="./virtualjoystick.js"></script>
+	<script src="./app.js"></script>
+</body>
+
+</html>
